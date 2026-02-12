@@ -1,0 +1,66 @@
+openapi: 3.0.3
+info:
+  title: CYFSA Educational Analyzer API
+  version: "0.1.0"
+  description: >
+    Educational-only analyzer API (Ontario jurisdiction only). This API returns
+    educational flags, not legal advice, not authenticity checks, and not outcome predictions.
+servers:
+  - url: http://localhost:5000
+paths:
+  /health:
+    get:
+      summary: Health check
+      responses:
+        "200":
+          description: OK
+  /analyze:
+    post:
+      summary: Analyze a document (educational flags only)
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              required: [document, consent_to_analyze]
+              properties:
+                document:
+                  type: string
+                  format: binary
+                  description: PDF/DOCX/TXT extracted text (server decides extraction method).
+                consent_to_analyze:
+                  type: boolean
+                  description: Must be true to proceed.
+                jurisdiction:
+                  type: string
+                  example: Ontario
+      responses:
+        "200":
+          description: Educational analysis result
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  document_type: { type: string }
+                  total_flags:
+                    type: object
+                    additionalProperties: { type: integer }
+                  procedural_status: { type: string }
+                  flags:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        severity: { type: string, enum: [RED, ORANGE, YELLOW] }
+                        category: { type: string }
+                        quote: { type: string, description: "≤25 words" }
+                        explanation: { type: string }
+                        source_citation: { type: string }
+                        suggestion: { type: string }
+                        rule_id: { type: string }
+                  audit_trail: { type: object }
+                  disclaimer: { type: string }
+        "400":
+          description: Missing consent or invalid request

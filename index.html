@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ontario CYFSA Parent Platform | Educational Resources</title>
+  <style>
+    :root{
+      --primary:#1a3a6c;--secondary:#e74c3c;--accent:#27ae60;
+      --light:#f8f9fa;--dark:#2c3e50;--gray:#6c757d;
+      --radius:12px;--shadow:0 6px 18px rgba(0,0,0,.12)
+    }
+    *{margin:0;padding:0;box-sizing:border-box}
+    body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;line-height:1.55;color:#222;background:linear-gradient(135deg,#f5f7fa,#e4edf5)}
+    .container{max-width:1150px;margin:0 auto;padding:0 18px}
+    header{background:linear-gradient(135deg,var(--primary),#0d2a52);color:#fff;padding:26px 0;box-shadow:0 3px 15px rgba(0,0,0,.2)}
+    .head{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+    .logo{display:flex;align-items:center;gap:14px}
+    .logo .icon{font-size:2.2rem}
+    .logo h1{font-size:1.25rem;font-weight:700;letter-spacing:.2px}
+    .logo p{opacity:.9;font-size:.95rem}
+    .btn{display:inline-block;text-decoration:none;font-weight:700;border-radius:999px;padding:10px 16px;border:2px solid transparent;cursor:pointer}
+    .btn.primary{background:var(--secondary);color:#fff}
+    .btn.outline{border-color:rgba(255,255,255,.6);color:#fff}
+    .banner{background:var(--secondary);color:#fff;text-align:center;padding:10px;font-weight:700}
+    main{padding:34px 0 60px}
+    .card{background:#fff;border-radius:var(--radius);box-shadow:var(--shadow);padding:22px}
+    .grid{display:grid;grid-template-columns:1fr;gap:18px}
+    @media(min-width:900px){.grid{grid-template-columns:1.2fr .8fr}}
+    h2{color:var(--primary);font-size:1.4rem;margin-bottom:10px}
+    p{color:#333}
+    .muted{color:var(--gray)}
+    .pill{display:inline-block;background:#eef3ff;color:var(--primary);padding:6px 10px;border-radius:999px;font-weight:700;font-size:.85rem;margin-bottom:12px}
+    .links a{display:flex;align-items:flex-start;gap:10px;padding:12px 14px;border-radius:10px;border:1px solid #e8eaee;text-decoration:none;color:#111;margin:10px 0}
+    .links a:hover{border-color:#cfd7e6;box-shadow:0 3px 10px rgba(0,0,0,.08)}
+    .links .k{min-width:26px;font-weight:900;color:var(--primary)}
+    .warn{background:#fff3cd;border-left:5px solid #ffc107;padding:14px 16px;border-radius:0 10px 10px 0}
+    .warn strong{color:#7a5a00}
+    .disclaimer{margin-top:18px;background:#f7f7f7;border-left:5px solid #ddd;padding:14px 16px;border-radius:0 10px 10px 0;font-size:.95rem}
+    footer{background:var(--dark);color:#fff;padding:28px 0;text-align:center}
+    footer p{color:rgba(255,255,255,.85);font-size:.92rem}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container head">
+      <div class="logo">
+        <div class="icon">⚖️</div>
+        <div>
+          <h1>Ontario CYFSA Parent Platform</h1>
+          <p>Evidence literacy + process education (Ontario only)</p>
+        </div>
+      </div>
+      <div style="display:flex;gap:10px;flex-wrap:wrap">
+        <a class="btn outline" href="law-firms.html">Law Firms</a>
+        <a class="btn primary" href="subscriber-area.html">Subscriber Area</a>
+      </div>
+    </div>
+  </header>
+
+  <div class="banner">
+    EDUCATIONAL INFORMATION ONLY — NOT LEGAL ADVICE — ONTARIO ONLY
+  </div>
+
+  <main class="container">
+    <div class="grid">
+      <section class="card">
+        <span class="pill">Start here</span>
+        <h2>Verified ways to find help (no fake listings)</h2>
+        <p class="muted">This site links you to official directories so you can verify any lawyer’s license and contact details yourself.</p>
+
+        <div class="links" aria-label="verified links">
+          <a href="https://www.legalaid.on.ca/services/how-do-i-apply-for-legal-aid/" target="_blank" rel="noopener">
+            <div class="k">1</div>
+            <div>
+              <strong>Apply for Legal Aid Ontario (LAO)</strong>
+              <div class="muted">Official application steps + eligibility screening.</div>
+            </div>
+          </a>
+          <a href="https://www.legalaid.on.ca/more/corporate/contact-legal-aid-ontario/" target="_blank" rel="noopener">
+            <div class="k">2</div>
+            <div>
+              <strong>LAO Contact Centre</strong>
+              <div class="muted">Toll-free contact details + hours.</div>
+            </div>
+          </a>
+          <a href="https://lso.ca/public-resources/finding-a-lawyer-or-paralegal/lawyer-and-paralegal-directory" target="_blank" rel="noopener">
+            <div class="k">3</div>
+            <div>
+              <strong>Law Society of Ontario (LSO) Lawyer Directory</strong>
+              <div class="muted">Verify license status, practice restrictions, and displayed contact info.</div>
+            </div>
+          </a>
+          <a href="https://lsrs.lso.ca/lsrs/redefineLocale.action?currentLang=en" target="_blank" rel="noopener">
+            <div class="k">4</div>
+            <div>
+              <strong>Law Society Referral Service (LSRS)</strong>
+              <div class="muted">Get a referral for a short consultation (LSO-operated).</div>
+            </div>
+          </a>
+        </div>
+
+        <div class="warn" style="margin-top:14px">
+          <strong>Do not trust random “lawyer lists”.</strong>
+          Only use verified directories (LSO / LAO / LSRS). If you add firm listings to this site, link to the firm’s official site and keep screenshots of verification.
+        </div>
+
+        <div class="disclaimer">
+          <strong>Disclaimer:</strong> This platform provides educational information only about Ontario’s CYFSA. It is not legal advice, does not form a lawyer-client relationship, and does not guarantee any outcome. Consult a licensed Ontario lawyer for advice specific to your situation.
+        </div>
+      </section>
+
+      <aside class="card">
+        <span class="pill">Payments</span>
+        <h2>Interac e‑Transfer</h2>
+        <p class="muted">This repo includes a printable payment instructions page. Replace the email below with your own if you fork this project.</p>
+        <div class="warn" style="margin-top:12px">
+          <div><strong>Recipient email:</strong></div>
+          <div style="font-family:ui-monospace, SFMono-Regular, Menlo, monospace;font-weight:900;margin-top:6px">Mr.pelkie@gmail.com</div>
+          <div class="muted" style="margin-top:8px">Always verify spelling before sending money.</div>
+        </div>
+        <div style="margin-top:14px;display:flex;gap:10px;flex-wrap:wrap">
+          <a class="btn primary" href="payment-instructions.html">Payment Instructions</a>
+          <a class="btn" style="background:#e9ecef;color:#111" href="law-firms.html">Browse firms</a>
+        </div>
+
+        <div class="disclaimer" style="margin-top:18px">
+          <strong>Security reality check:</strong> A static site can’t securely store documents or protect logins. Treat the subscriber page as convenience only, not privacy/security.
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>Ontario CYFSA Parent Platform • Educational resources only • Not a law firm</p>
+    </div>
+  </footer>
+</body>
+</html>

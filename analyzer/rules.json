@@ -1,0 +1,49 @@
+{
+  "analyzer_metadata": {
+    "version": "2.1",
+    "last_updated": "2026-02-12",
+    "jurisdiction": "Ontario, Canada",
+    "governing_legislation": "Child, Youth and Family Services Act, 2017, S.O. 2017, c. 14, Sched. 1",
+    "source_locked": true,
+    "immutable_audit": true
+  },
+  "severity_levels": {
+    "RED": {
+      "description": "Critical procedural defect or evidence gap (educational flag)."
+    },
+    "ORANGE": {
+      "description": "Significant issue requiring clarification (educational flag)."
+    },
+    "YELLOW": {
+      "description": "Minor issue / strengthen documentation (educational flag)."
+    }
+  },
+  "compliance_safeguards": {
+    "hard_rules": [
+      "NEVER infer legal validity of documents",
+      "NEVER state consent was/was not given",
+      "NEVER determine identity/authenticity",
+      "ALWAYS quote \u226425 words from user documents only",
+      "ALWAYS include source citations for legal concepts you mention",
+      "ALWAYS display educational disclaimer on every output",
+      "NEVER provide legal advice or predict outcomes",
+      "ALWAYS flag non-Ontario content as out_of_jurisdiction"
+    ],
+    "disclaimer_required": "EDUCATIONAL INFORMATION ONLY: This analysis provides procedural literacy and evidence quality indicators for educational purposes. It is not legal advice, does not form a lawyer-client relationship, and does not guarantee any outcome. Consult a licensed Ontario lawyer for advice specific to your situation.",
+    "jurisdiction_guardrail": "Ontario only."
+  },
+  "patterns": {
+    "hearsay": [
+      "\\\\b(i was told by|i heard that|reportedly|allegedly)\\\\b"
+    ],
+    "out_of_jurisdiction": [
+      "\\\\b(georgia|texas|california|cps|dcfs)\\\\b"
+    ]
+  },
+  "citations": {
+    "hearsay_general": {
+      "label": "Hearsay reliability (general evidence law)",
+      "source": "R. v. Khelawon, 2006 SCC 57"
+    }
+  }
+}

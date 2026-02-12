@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Subscriber Area (Educational Only)</title>
+  <style>
+    :root{--primary:#1a3a6c;--secondary:#e74c3c;--dark:#2c3e50;--gray:#6c757d;--radius:14px;--shadow:0 10px 28px rgba(0,0,0,.18)}
+    *{margin:0;padding:0;box-sizing:border-box}
+    body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:linear-gradient(135deg,#f5f7fa,#e4edf5);color:#222;min-height:100vh;padding:18px}
+    .wrap{max-width:980px;margin:0 auto}
+    .card{background:#fff;border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden}
+    header{background:linear-gradient(135deg,var(--primary),#0d2a52);color:#fff;padding:22px 22px}
+    header h1{font-size:1.4rem}
+    header p{opacity:.9;margin-top:6px}
+    .banner{background:var(--secondary);color:#fff;text-align:center;padding:10px;font-weight:900}
+    .content{padding:22px}
+    .warn{background:#fff3cd;border-left:5px solid #ffc107;padding:14px 16px;border-radius:0 10px 10px 0;margin:14px 0}
+    .muted{color:var(--gray)}
+    .grid{display:grid;grid-template-columns:1fr;gap:14px;margin-top:14px}
+    @media(min-width:820px){.grid{grid-template-columns:1fr 1fr}}
+    .module{border:2px solid #e8eaee;border-radius:12px;padding:16px}
+    .module h3{color:var(--primary);margin-bottom:8px}
+    .btn{display:inline-block;border:none;border-radius:10px;padding:10px 14px;font-weight:900;cursor:pointer;text-decoration:none}
+    .btn.primary{background:var(--primary);color:#fff}
+    .btn.light{background:#e9ecef;color:#111}
+    .login-overlay{position:fixed;inset:0;background:rgba(0,0,0,.85);display:flex;align-items:center;justify-content:center;padding:18px}
+    .login{background:#fff;border-radius:16px;max-width:440px;width:100%;padding:20px;box-shadow:0 18px 50px rgba(0,0,0,.35)}
+    .login h2{color:var(--primary);margin-bottom:8px}
+    input{width:100%;padding:12px 12px;border-radius:10px;border:2px solid #ddd;margin-top:10px;font-size:1rem}
+    input:focus{outline:none;border-color:var(--primary)}
+    .err{color:var(--secondary);min-height:20px;margin-top:10px;font-weight:800}
+    footer{margin-top:14px;text-align:center;color:#444}
+    code{font-family:ui-monospace, SFMono-Regular, Menlo, monospace}
+  </style>
+</head>
+<body>
+  <div class="login-overlay" id="overlay">
+    <div class="login">
+      <div style="font-size:2rem">⚖️</div>
+      <h2>Subscriber Area (Educational)</h2>
+      <p class="muted">Client-side gate only. Not secure. Do not upload sensitive documents here.</p>
+      <div class="warn" style="margin-top:12px">
+        <strong>Security note:</strong> This is a static page. Anyone with the password can access. For real security, use proper authentication + encrypted storage.
+      </div>
+      <label for="pw" style="display:block;margin-top:10px;font-weight:900">Password</label>
+      <input id="pw" type="password" placeholder="Enter password" />
+      <div class="err" id="err"></div>
+      <button class="btn primary" style="width:100%;margin-top:10px" onclick="unlock()">Unlock</button>
+      <div style="margin-top:12px;font-size:.92rem" class="muted">Demo passwords: <code>ParentPro2026</code>, <code>Premium2026</code></div>
+      <div style="margin-top:10px"><a class="btn light" href="index.html" style="width:100%;text-align:center;display:block">Back to Home</a></div>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <div class="card">
+      <div class="banner">EDUCATIONAL INFORMATION ONLY — NOT LEGAL ADVICE — ONTARIO ONLY</div>
+      <header>
+        <h1 id="welcome">Welcome</h1>
+        <p>Educational tools: worksheets, timelines, evidence literacy.</p>
+      </header>
+      <div class="content">
+        <div class="warn">
+          <strong>Do not upload sensitive documents on a static site.</strong>
+          If you need document analysis, use the Python prototype locally, or build a secure backend.
+        </div>
+
+        <div class="grid">
+          <div class="module">
+            <h3>📄 Document Analyzer (prototype)</h3>
+            <p class="muted">This webpage does not run the Python analyzer. Use the local engine in <code>analyzer/engine.py</code>.</p>
+            <button class="btn primary" onclick="alert('Run locally: python analyzer/engine.py\n\nThis repo keeps analyzer separate to avoid pretending a static page securely processes documents.')">How to run</button>
+          </div>
+
+          <div class="module">
+            <h3>📥 Worksheets</h3>
+            <p class="muted">Add your PDFs in a /downloads folder and link them here.</p>
+            <button class="btn light" onclick="alert('Add files: /downloads/first-5-days.pdf etc. Then update this page with links.')">Add downloads</button>
+          </div>
+
+          <div class="module">
+            <h3>⚖️ Find a Lawyer</h3>
+            <p class="muted">Use verified tools: LAO / LSO Directory / LSRS.</p>
+            <a class="btn primary" href="https://lso.ca/public-resources/finding-a-lawyer-or-paralegal/lawyer-and-paralegal-directory" target="_blank" rel="noopener">LSO Directory</a>
+          </div>
+
+          <div class="module">
+            <h3>🔒 Log out</h3>
+            <p class="muted">This just hides the content again on your device.</p>
+            <button class="btn light" onclick="logout()">Log out</button>
+          </div>
+        </div>
+
+        <div style="margin-top:16px;background:#f7f7f7;border-left:5px solid #ddd;padding:14px 16px;border-radius:0 10px 10px 0">
+          <strong>Disclaimer:</strong> This subscriber area is for educational content only. It does not provide legal advice and does not create a lawyer-client relationship.
+        </div>
+      </div>
+    </div>
+
+    <footer>© 2026 • Educational only • Ontario jurisdiction</footer>
+  </div>
+
+  <script>
+    const VALID = new Set(["ParentPro2026","Premium2026"]);
+    function unlock(){
+      const v = document.getElementById("pw").value.trim();
+      const err = document.getElementById("err");
+      if(VALID.has(v)){
+        document.getElementById("overlay").style.display="none";
+        document.getElementById("welcome").textContent = v==="Premium2026" ? "Welcome, Premium Subscriber" : "Welcome, Parent Pro Subscriber";
+      } else {
+        err.textContent = "Incorrect password.";
+        document.getElementById("pw").value = "";
+        document.getElementById("pw").focus();
+      }
+    }
+    function logout(){ document.getElementById("overlay").style.display="flex"; }
+    document.getElementById("pw").addEventListener("keydown",(e)=>{ if(e.key==="Enter") unlock(); });
+  </script>
+</body>
+</html>
